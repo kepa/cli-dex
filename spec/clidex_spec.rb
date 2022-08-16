@@ -5,7 +5,14 @@ RSpec.describe Clidex do
     expect(Clidex::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
+  describe "#find_pokemon" do
+    let(:pokemon) { "blastoise" }
+    it "returns pokemon object from API" do
+      poke = Clidex.find_pokemon(pokemon)
+
+      expect(poke.species.name).to include("blastoise")
+    end
+
+    it "returns pokemon type"
   end
 end

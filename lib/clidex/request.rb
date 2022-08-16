@@ -1,11 +1,15 @@
 # frozen_string_literal: true
+
 require "poke-api-v2"
 
-module clidex
+module Clidex
 
   class Request
-    def find_pokemon(poke)
-      PokeApi.get(pokemon: poke)
+
+    class << self
+      def pokemon_by_name(poke)
+        PokeApi.get(pokemon: poke)
+      end
     end
   end
 end
